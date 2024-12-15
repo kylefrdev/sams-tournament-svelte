@@ -7,8 +7,9 @@
         copies: 4,
         formatRules: [
             "All cards must be Vintage Legal",
-            "Letters are chosen randomly by die roll by impartial party (Mike)",
-            "All cards besides basic lands must start with chosen letter or 'The (letter)'; example: Chosen letter of R can use The Rack in their deck",
+            "Letters are chosen randomly by die (d20) roll by impartial party (Mike)",
+            "All cards must start with chosen letter, basic lands ignore this rule",
+            "Cards starting with The followed by a word are also allowed. example: Chosen letter of R can use The Rack in their deck",
             "Deck can only contain 4 cards with goblin creature type total, regardless of letter; example: (4 Krenko, Mob Boss in a K deck)",
         ],
         samsBans:[
