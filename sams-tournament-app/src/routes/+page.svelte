@@ -1,4 +1,6 @@
 <script>
+    import Formatrules from "$lib/components/formatrules.svelte";
+
     let letter = {
         format: 'Letter',
         base: 'Vintage',
@@ -83,6 +85,7 @@
             "Pradesh Gypsies",
             "Prize Wall",
             "Proficient Pyrodancer",
+            "Psychic Frog",
             "Rebirth",
             "Robo-Piñata",
             "_____ _____ Rocketship",
@@ -112,6 +115,7 @@
             "The Most Dangerous Gamer",
             "Tusk and Whiskers",
             "Unexpected Potential",
+            "Vexing Bauble",
             "Weight Advantage",
             "Wicker Picker",
             "Wizards of the _____",
@@ -172,7 +176,8 @@
             "Yawgmoth's Will",
         ],
         clarifications: [
-            "Using a 60 card deck as an example, you can have 56 cards without and 4 cards with goblin type."
+            "Using a 60 card deck as an example, you can have 56 cards without and 4 cards with goblin type.",
+            "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type."
         ],
     }
 
@@ -204,6 +209,7 @@
         ],
         samsBans:[],
         bans: [
+            "Amped Raptor",
             "Ancient Den",
             "Arcum's Astrolabe",
             "Birthing Pod",
@@ -216,21 +222,19 @@
             "Dig Through Time",
             "Dread Return",
             "Eye of Ugin",
-            "Faithless Looting",
             "Field of the Dead",
             "Fury",
             "Gitaxian Probe",
             "Glimpse of Nature",
             "Golgari Grave-Troll",
             "Great Furnace",
-            "Green Sun's Zenith",
             "Grief",
             "Hogaak, Arisen Necropolis",
             "Hypergenesis",
+            "Jegantha, the Wellspring",
             "Krark-Clan Ironworks",
             "Lurrus of the Dream-Den",
             "Mental Misstep",
-            "Mox Opal",
             "Mycosynth Lattice",
             "Mystic Sanctuary",
             "Nadu, Winged Wisdom",
@@ -245,8 +249,8 @@
             "Sensei's Divining Top",
             "Simian Spirit Guide",
             "Skullclamp",
-            "Splinter Twin",
             "Summer Bloom",
+            "The One Ring",
             "Tibalt's Trickery",
             "Treasure Cruise",
             "Tree of Tales",
@@ -265,4 +269,16 @@
     }
 </script>
 
-<h1>Sam's Annual Tournament</h1>
+<div class="w-full h-full bg-gray-900">
+    <h1 class="bg-gray-800 text-gray-200">Sam's Annual Tournament</h1>
+    <p class="bg-gray-700 text-gray-200">3 Matches of each Format are played using a pairing system. Points are awarded based on W/L ratio in each format. Winner is player with most points from all formats. Winner selects 1 format for next year.</p>
+    <Formatrules rules={letter}/>
+    <Formatrules rules={sams}/>
+    <Formatrules rules={choice}/>
+</div>
+<style>
+    h1 {
+        text-align: center;
+        font-size: 4vh;
+    }
+</style>
