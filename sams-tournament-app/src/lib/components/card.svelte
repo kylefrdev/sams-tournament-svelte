@@ -56,8 +56,7 @@
     tabindex="0"
     aria-haspopup="true"
     aria-expanded={isVisible}
-    aria-label={`Show image of ${name}`}      
-    on:mouseleave={() => isVisible = false}           
+    aria-label={`Show image of ${name}`}               
     on:click={toggleVisibility}     
     on:touchstart={toggleVisibility}                              
     on:keydown={(e) => (e.key === "Enter" || e.key === " ") && toggleVisibility()}
@@ -77,7 +76,7 @@
   </div>
   <!-- on:mouseenter={() => { isVisible = true; fetchCardImage(); }}
   on:mouseleave={() => isVisible = false}     -->
-
+  <!-- on:mouseleave={() => isVisible = false}   -->
   <style>
     span {
         user-select: none
