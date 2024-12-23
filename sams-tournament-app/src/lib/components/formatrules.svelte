@@ -1,14 +1,14 @@
 <script>
     import Bans from "./bans.svelte";
+    import Odds from "./odds.svelte"
     import Collapsible from "./collapsible.svelte";
     export let rules
-
 </script>
 
 {#if rules}
     <Collapsible>
         <h1 class="bg-gray-800 text-gray-200" slot="header">{rules.format}</h1>
-        <div slot="content">
+        <div class=' border border-purple-800' slot="content">
             <h1 class="bg-gray-800 text-gray-200">Format</h1>
             <h1 class="bg-gray-700 text-gray-200">{rules.format}</h1>
             <div class="grid grid-cols-2">
@@ -35,6 +35,9 @@
             <Bans title="Ban List" list={rules.bans}/>
             <Bans title="Sam's Ban List" list={rules.samsBans}/>
             <Bans title="Restricted List" list={rules.restricted}/>
+            {#if rules?.odds}
+                <Odds odds={rules.odds}/>
+            {/if}
         </div>
     </Collapsible>
 {:else}

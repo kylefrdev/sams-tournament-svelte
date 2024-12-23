@@ -56,10 +56,10 @@
     tabindex="0"
     aria-haspopup="true"
     aria-expanded={isVisible}
-    aria-label={`Show image of ${name}`}
-    on:mouseenter={() => { isVisible = true; fetchCardImage(); }}
-    on:mouseleave={() => isVisible = false}                    
-    on:click={toggleVisibility}                                
+    aria-label={`Show image of ${name}`}      
+    on:mouseleave={() => isVisible = false}           
+    on:click={toggleVisibility}     
+    on:touchstart={toggleVisibility}                              
     on:keydown={(e) => (e.key === "Enter" || e.key === " ") && toggleVisibility()}
   >
     <div class='text-center'>
@@ -75,4 +75,5 @@
       </div>
     {/if}
   </div>
-  
+  <!-- on:mouseenter={() => { isVisible = true; fetchCardImage(); }}
+  on:mouseleave={() => isVisible = false}     -->

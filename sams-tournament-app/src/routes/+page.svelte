@@ -9,10 +9,11 @@
         copies: 4,
         formatRules: [
             "All cards must be Vintage Legal",
-            "Letters are chosen randomly by die (d20) roll by impartial party (Mike)",
+            "Letters are chosen randomly by die (d100) roll by impartial party (Mike)",
             "All cards must start with chosen letter, basic lands ignore this rule",
             "Cards starting with The followed by a word are also allowed. example: Chosen letter of R can use The Rack in their deck",
             "Deck can only contain 4 cards with goblin creature type total, regardless of letter; example: (4 Krenko, Mob Boss in a K deck)",
+            '"Color Hosers" that permenantly inhibit one or more colors from being played, Ex  Deathmark (ok), Boil (Banned)'
         ],
         samsBans:[
             "Stoneforge Mystic",
@@ -179,6 +180,34 @@
             "Using a 60 card deck as an example, you can have 56 cards without and 4 cards with goblin type.",
             "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type."
         ],
+        odds:{
+            'A':{faces:[1,5], players:['Tiki']},
+            'B':{faces:[6,10], players:[]},
+            'C':{faces:[11,15], players:['Evan','Jordan']},
+            'D':{faces:[16,20], players:[]},
+            'E':{faces:[21,25], players:[]},
+            'F':{faces:[26,30], players:['Connor', 'Josh']},
+            'G':{faces:[31,35], players:['Scott']},
+            'H':{faces:[36,40], players:[]},
+            'I':{faces:[41,41], players:['Mark']},
+            'J':{faces:[42,42], players:[]},
+            'K':{faces:[43,46], players:['Dan', 'Kyle', 'Zachary']},
+            'L':{faces:[47,51], players:[]},
+            'M':{faces:[52,56], players:['Fernando']},
+            'N':{faces:[57,60], players:[]},
+            'O':{faces:[61,64], players:[]},
+            'P':{faces:[65,69], players:['John']},
+            'Q':{faces:[70,70], players:[]},
+            'R':{faces:[71,75], players:[]},
+            'S':{faces:[76,80], players:['Bruno', 'Gabe', 'Gary', 'Sam']},
+            'T':{faces:[81,75], players:[]},
+            'U':{faces:[86,86], players:[]},
+            'V':{faces:[87,91], players:['Froggy']},
+            'W':{faces:[92,96], players:[]},
+            'X':{faces:[97,97], players:[]},
+            'Y':{faces:[98,99], players:['Fresh']},
+            'Z':{faces:[100,100], players:[]}
+        }
     }
 
     let sams = {
@@ -270,8 +299,12 @@
 </script>
 
 <div class="w-full h-full bg-gray-900">
-    <h1 class="bg-gray-800 text-gray-200">Sam's Annual Tournament</h1>
-    <p class="bg-gray-700 text-gray-200">3 Matches of each Format are played using a pairing system. Points are awarded based on W/L ratio in each format. Winner is player with most points from all formats. Winner selects 1 format for next year.</p>
+    <h1 class="bg-gray-800 text-gray-200 text-center">Sam's Annual Tournament</h1>
+    <h2 class="bg-gray-700 text-gray-200 text-center">3 Matches of each Format are played using a pairing system.</h2>
+    <h2 class="bg-gray-700 text-gray-200 text-center">Points are awarded based on W/L ratio in each format.</h2>
+    <h2 class="bg-gray-700 text-gray-200 text-center">Winner is player with most points from all formats.</h2>
+    <h2 class="bg-gray-700 text-gray-200 text-center">Winner selects 1 format for next year.</h2>
+    
     <Formatrules rules={letter}/>
     <Formatrules rules={sams}/>
     <Formatrules rules={choice}/>

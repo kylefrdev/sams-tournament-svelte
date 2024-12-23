@@ -23,7 +23,7 @@
     <!-- Collapsible Content -->
     <div
       class="overflow-hidden transition-all duration-300"
-      style={`max-height: ${isOpen ? '1000px' : '0px'};`}
+      style={`max-height: ${isOpen ? 'auto' : '0px'};`}
     >
       <div>
         <slot name="content">Default Content</slot>
