@@ -182,7 +182,7 @@
     }
 
     let sams = {
-        format: 'Standard',
+        format: "Sam's Choice: Standard",
         base: 'Standard',
         min: 60,
         max: null,
@@ -197,7 +197,7 @@
     }
 
     let choice = {
-        format: 'Two-Type Modern',
+        format: "Winner's Choice: Two-Type Modern",
         base: 'Modern',
         min: 60,
         max: null,

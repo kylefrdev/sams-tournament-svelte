@@ -3,7 +3,7 @@
     let cardImage = ""; // Image URL
     let isVisible = false; // State for visibility
     let containerRef; // Reference to the container
-  
+
     // Fetch card image only once
     async function fetchCardImage() {
       if (!cardImage) {
@@ -42,10 +42,10 @@
   
     onMount(() => {
       window.addEventListener("click", handleClickOutside);
-    });
-  
-    onDestroy(() => {
-      window.removeEventListener("click", handleClickOutside);
+        return () => {
+            window.removeEventListener("click", handleClickOutside);
+        }
+    
     });
   </script>
   
