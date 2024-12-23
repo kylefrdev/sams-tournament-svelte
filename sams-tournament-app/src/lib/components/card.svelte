@@ -39,6 +39,7 @@
   
     // Add and remove event listener
     import { onMount, onDestroy } from "svelte";
+    import { preventDefault } from "svelte/legacy";
   
     onMount(() => {
       window.addEventListener("click", handleClickOutside);
@@ -58,11 +59,11 @@
     aria-expanded={isVisible}
     aria-label={`Show image of ${name}`}               
     on:click={toggleVisibility}     
-    on:touchstart={toggleVisibility}                              
+    on:touchstart={(e)=>{e.preventDefault(); toggleVisibility()}}                            
     on:keydown={(e) => (e.key === "Enter" || e.key === " ") && toggleVisibility()}
   >
     <div class='text-center'>
-        <span class="text-blue-300 underline cursor-pointer">{name}</span>
+        <span class="text-blue-300">{name}</span>
     </div>
     {#if isVisible && cardImage}
       <div
