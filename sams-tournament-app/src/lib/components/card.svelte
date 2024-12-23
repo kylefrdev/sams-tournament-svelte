@@ -49,7 +49,6 @@
     });
   </script>
   
-  <!-- Container with ref -->
   <div
     bind:this={containerRef}
     class="relative inline-block focus:outline-none"
@@ -63,11 +62,9 @@
     on:click={toggleVisibility}                                
     on:keydown={(e) => (e.key === "Enter" || e.key === " ") && toggleVisibility()}
   >
-    <!-- Card Name -->
     <div class='text-center'>
         <span class="text-blue-300 underline cursor-pointer">{name}</span>
     </div>
-    <!-- Card Image Tooltip -->
     {#if isVisible && cardImage}
       <div
         class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg z-50"
