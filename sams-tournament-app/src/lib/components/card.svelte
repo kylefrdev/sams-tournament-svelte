@@ -77,3 +77,9 @@
   </div>
   <!-- on:mouseenter={() => { isVisible = true; fetchCardImage(); }}
   on:mouseleave={() => isVisible = false}     -->
+
+  <style>
+    span {
+        user-select: none
+    }
+  </style>
