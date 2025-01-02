@@ -3,26 +3,27 @@
     import Odds from "./odds.svelte"
     import Collapsible from "./collapsible.svelte";
     export let rules
+    export let players
 </script>
 
 {#if rules}
     <Collapsible>
-        <h1 class="bg-gray-800 text-gray-200" slot="header">{rules.format}</h1>
+        <h1 class="bg-gray-800 text-gray-200" slot="header">{rules.formatTitle}</h1>
         <div class=' border border-purple-800' slot="content">
             <h1 class="bg-gray-800 text-gray-200">Format</h1>
-            <h1 class="bg-gray-700 text-gray-200">{rules.format}</h1>
+            <h1 class="bg-gray-700 text-gray-200 text-2xl">{rules.format}</h1>
             <div class="grid grid-cols-2">
                 <h2 class="bg-gray-800 text-gray-200">Base Rules</h2>
                 <h2 class="bg-gray-800 text-gray-200">Copies per Card</h2>
-                <h3 class="bg-gray-700 text-gray-200">{rules.base}</h3>
-                <h3 class="bg-gray-700 text-gray-200">{rules.copies}</h3>
+                <h3 class="bg-gray-700 text-gray-200 text-2xl">{rules.base}</h3>
+                <h3 class="bg-gray-700 text-gray-200 text-2xl">{rules.copies}</h3>
             </div>
             <h2 class="bg-gray-800 text-gray-200">Deck Size Limits</h2>
             <div class="grid grid-cols-2">
                 <h2 class="bg-gray-700 text-gray-200">Min</h2>
                 <h2 class="bg-gray-700 text-gray-200">Max</h2>
-                <h2 class="bg-gray-600 text-gray-200">{rules.min}</h2>
-                <h2 class="bg-gray-600 text-gray-200">{rules.max ?? "\u221E"}</h2>
+                <h2 class="bg-gray-600 text-gray-200 text-2xl">{rules.min}</h2>
+                <h2 class="bg-gray-600 text-gray-200 text-2xl">{rules.max ?? "\u221E"}</h2>
             </div>
             <h1 class="bg-gray-800 text-gray-200">Format Rules</h1>
             {#each rules.formatRules as rule}
@@ -36,7 +37,7 @@
             <Bans title="Sam's Ban List" list={rules.samsBans}/>
             <Bans title="Restricted List" list={rules.restricted}/>
             {#if rules?.odds}
-                <Odds odds={rules.odds}/>
+                <Odds odds={rules.odds} players={players}/>
             {/if}
         </div>
     </Collapsible>

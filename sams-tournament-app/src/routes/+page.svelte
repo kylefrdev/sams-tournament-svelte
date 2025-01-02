@@ -1,7 +1,30 @@
 <script>
     import Formatrules from "$lib/components/formatrules.svelte";
+    import Points from "$lib/components/points.svelte";
+
+    let players = {
+        Bruno:{letter:"S",potluck:""},
+        Connor:{letter:"F",potluck:""},
+        Dan:{letter:"K",potluck:""},
+        Evan:{letter:"C",potluck:""},
+        Fernando:{letter:"M",potluck:""},
+        Fresh:{letter:"Y",potluck:""},
+        Froggy:{letter:"V",potluck:""},
+        Gabe:{letter:"S",potluck:""},
+        Gary:{letter:"S",potluck:""},
+        John:{letter:"P",potluck:""},
+        Jordan:{letter:"C",potluck:""},
+        Josh:{letter:"F",potluck:""},
+        Kyle:{letter:"K",potluck:"Pumpkin Cake"},
+        Mark:{letter:"I",potluck:""},
+        Sam:{letter:"S",potluck:""},
+        Scott:{letter:"G",potluck:""},
+        Tiki:{letter:"A",potluck:""},
+        Zachary:{letter:"K",potluck:""}
+    }
 
     let letter = {
+        formatTitle: "Letter",
         format: 'Letter',
         base: 'Vintage',
         min: 60,
@@ -11,7 +34,7 @@
             "All cards must be Vintage Legal",
             "Letters are chosen randomly by die (d100) roll by impartial party (Mike)",
             "All cards must start with chosen letter, basic lands ignore this rule",
-            "Cards starting with The followed by a word are also allowed. example: Chosen letter of R can use The Rack in their deck",
+            "Cards starting with the word (The) followed by a word are also allowed. example: Chosen letter of (R) can use The Rack in their deck",
             "Deck can only contain 4 cards with goblin creature type total, regardless of letter; example: (4 Krenko, Mob Boss in a K deck)",
             '"Color Hosers" that permenantly inhibit one or more colors from being played, Ex  Deathmark (ok), Boil (Banned)'
         ],
@@ -181,37 +204,38 @@
             "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type."
         ],
         odds:{
-            'A':{faces:[1,5], players:['Tiki']},
-            'B':{faces:[6,10], players:[]},
-            'C':{faces:[11,15], players:['Evan','Jordan']},
-            'D':{faces:[16,20], players:[]},
-            'E':{faces:[21,25], players:[]},
-            'F':{faces:[26,30], players:['Connor', 'Josh']},
-            'G':{faces:[31,35], players:['Scott']},
-            'H':{faces:[36,40], players:[]},
-            'I':{faces:[41,41], players:['Mark']},
-            'J':{faces:[42,42], players:[]},
-            'K':{faces:[43,46], players:['Dan', 'Kyle', 'Zachary']},
-            'L':{faces:[47,51], players:[]},
-            'M':{faces:[52,56], players:['Fernando']},
-            'N':{faces:[57,60], players:[]},
-            'O':{faces:[61,64], players:[]},
-            'P':{faces:[65,69], players:['John']},
-            'Q':{faces:[70,70], players:[]},
-            'R':{faces:[71,75], players:[]},
-            'S':{faces:[76,80], players:['Bruno', 'Gabe', 'Gary', 'Sam']},
-            'T':{faces:[81,75], players:[]},
-            'U':{faces:[86,86], players:[]},
-            'V':{faces:[87,91], players:['Froggy']},
-            'W':{faces:[92,96], players:[]},
-            'X':{faces:[97,97], players:[]},
-            'Y':{faces:[98,99], players:['Fresh']},
-            'Z':{faces:[100,100], players:[]}
+            'A':{faces:[1,5]},
+            'B':{faces:[6,10]},
+            'C':{faces:[11,15]},
+            'D':{faces:[16,20]},
+            'E':{faces:[21,25]},
+            'F':{faces:[26,30]},
+            'G':{faces:[31,35]},
+            'H':{faces:[36,40]},
+            'I':{faces:[41,41]},
+            'J':{faces:[42,42]},
+            'K':{faces:[43,46]},
+            'L':{faces:[47,51]},
+            'M':{faces:[52,56]},
+            'N':{faces:[57,60]},
+            'O':{faces:[61,64]},
+            'P':{faces:[65,69]},
+            'Q':{faces:[70,70]},
+            'R':{faces:[71,75]},
+            'S':{faces:[76,80]},
+            'T':{faces:[81,85]},
+            'U':{faces:[86,86]},
+            'V':{faces:[87,91]},
+            'W':{faces:[92,96]},
+            'X':{faces:[97,97]},
+            'Y':{faces:[98,99]},
+            'Z':{faces:[100,100]}
         }
     }
 
     let sams = {
-        format: "Sam's Choice: Standard",
+        formatTitle: "Sam's Choice",
+        format: "Standard",
         base: 'Standard',
         min: 60,
         max: null,
@@ -226,7 +250,8 @@
     }
 
     let choice = {
-        format: "Winner's Choice: Two-Type Modern",
+        formatTitle: "Defending Champions's Choice",
+        format: "Two-Type Modern",
         base: 'Modern',
         min: 60,
         max: null,
@@ -293,21 +318,28 @@
         restricted: [],
         clarifications: [
             "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type.",
-            "A card can have one or both of the types but cannot have another type not chosen, example Artifact/Planeswalker cannot have the card Simulacrum, which is an Artifact Creature, in their deck",
+            "A card can have one or both of the types but cannot have another type not chosen, example Artifact/Planeswalker cannot have the card Simulacrum, which is an Artifact Creature, in their deck.",
+            "Split Cards/Flip Cards/Meld Cards or any single card with multiple sides must follow these rules as well on every side. Using a previous example,  cannot be used even though one side is an Artifact the other is a Creature and the chosen types were Artifact/Planeswalker",
         ],
     }
 </script>
 
 <div class="w-full h-full bg-gray-900">
     <h1 class="bg-gray-800 text-gray-200 text-center">Sam's Annual Tournament</h1>
-    <h2 class="bg-gray-700 text-gray-200 text-center">3 Matches of each Format are played using a pairing system.</h2>
-    <h2 class="bg-gray-700 text-gray-200 text-center">Points are awarded based on W/L ratio in each format.</h2>
-    <h2 class="bg-gray-700 text-gray-200 text-center">Winner is player with most points from all formats.</h2>
-    <h2 class="bg-gray-700 text-gray-200 text-center">Winner selects 1 format for next year.</h2>
+    <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invititational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
+    <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of most recent Standard MTG Set </h2>
+    <h2 class="bg-gray-600 text-gray-200 text-center">Additional Fees/Requirements may apply depending on Format</h2>
+    <h2 class="bg-gray-600 text-gray-200 text-center">You must bring all decks and required materials or be disqualified, on day of tournament.</h2>
+    <h2 class="bg-gray-600 text-gray-200 text-center">Cards can be borrowed from Sam's Collection at a First Come/First Serve Basis</h2>
+    <h2 class="bg-gray-500 text-gray-200 text-center">3 Matches of each Format are played using a pairing system.</h2>
+    <h2 class="bg-gray-500 text-gray-200 text-center">Points are awarded based on W/L ratio in each format.</h2>
+    <h2 class="bg-gray-500 text-gray-200 text-center">Winner is player with most points from all formats.</h2>
+    <h2 class="bg-gray-500 text-gray-200 text-center">Winner selects 1 format for next year.</h2>
     
-    <Formatrules rules={letter}/>
+    <Formatrules rules={letter} players={players}/>
     <Formatrules rules={sams}/>
     <Formatrules rules={choice}/>
+    <Points/>
 </div>
 <style>
     h1 {

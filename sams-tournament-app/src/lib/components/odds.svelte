@@ -2,14 +2,17 @@
     import Collapsible from "./collapsible.svelte";
 
     export let odds
+    export let players
 
-    function renderPlayers(players) {
+    function renderPlayers(letter) {
         let output = ""
-        for(let player of players) {
-            if(output == "") {
-                output += player
-            } else {
-                output += `, ${player}`
+        for(let player of Object.entries(players)) {
+            if(player[1].letter == letter){
+                if(output == "") {
+                    output += player[0]
+                } else {
+                    output += `, ${player[0]}`
+                }
             }
         }
         return output
@@ -33,7 +36,7 @@
                     <td class="border border-purple-800 text-gray-200 px-4 py-2 text-center">{key}</td>
                     <td class="border border-purple-800 text-gray-200 px-4 py-2 text-center">{odd.faces[0]==odd.faces[1]?odd.faces[0]:`${odd.faces[0]}-${odd.faces[1]}`}</td>
                     <td class="border border-purple-800 text-gray-200 px-4 py-2 text-center">{odd.faces[1]-odd.faces[0]+1}%</td>
-                    <td class="border border-purple-800 text-gray-200 px-4 py-2 text-center">{renderPlayers(odd.players)}</td>
+                    <td class="border border-purple-800 text-gray-200 px-4 py-2 text-center">{renderPlayers(key)}</td>
                 </tr>
             {/each}
         </tbody>
