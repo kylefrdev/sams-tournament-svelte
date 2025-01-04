@@ -319,13 +319,14 @@
         clarifications: [
             "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type.",
             "A card can have one or both of the types but cannot have another type not chosen, example Artifact/Planeswalker cannot have the card Simulacrum, which is an Artifact Creature, in their deck.",
-            "Split Cards/Flip Cards/Meld Cards or any single card with multiple sides must follow these rules as well on every side. Using a previous example,  cannot be used even though one side is an Artifact the other is a Creature and the chosen types were Artifact/Planeswalker",
+            "Split Cards/Flip Cards or any single card with multiple sides must follow these rules as well on every side. Using a previous example,  cannot be used even though one side is an Artifact the other is a Creature and the chosen types were Artifact/Planeswalker",
+            "Meld Cards although having a part of a card on one side does not count against that rule, So Urza, Lord Protector and The Mightstone and MeakStone can be used in an Artifact/Creature deck despite the melded card being a planeswalker"
         ],
     }
 </script>
 
 <div class="w-full h-full bg-gray-900">
-    <h1 class="bg-gray-800 text-gray-200 text-center">Sam's Annual Tournament</h1>
+    <h1 class="bg-gray-800 text-gray-200 text-center">Luton Invititational</h1>
     <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invititational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of most recent Standard MTG Set </h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Additional Fees/Requirements may apply depending on Format</h2>
