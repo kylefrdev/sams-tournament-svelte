@@ -1,12 +1,13 @@
 <script>
     import Formatrules from "$lib/components/formatrules.svelte";
+    import Potluck from "$lib/components/potluck.svelte";
     import Points from "$lib/components/points.svelte";
 
     let players = {
-        Bruno:{letter:"S",potluck:""},
+        Bruno:{letter:"S",potluck:"Well Done Ribs"},
         Connor:{letter:"F",potluck:""},
         Dan:{letter:"K",potluck:""},
-        Evan:{letter:"C",potluck:""},
+        Evan:{letter:"C",potluck:"Fried Chicken"},
         Fernando:{letter:"M",potluck:""},
         Fresh:{letter:"Y",potluck:""},
         Froggy:{letter:"V",potluck:""},
@@ -17,9 +18,9 @@
         Josh:{letter:"F",potluck:""},
         Kyle:{letter:"K",potluck:"Pumpkin Cake"},
         Mark:{letter:"I",potluck:""},
-        Sam:{letter:"S",potluck:""},
-        Scott:{letter:"G",potluck:""},
-        Tiki:{letter:"A",potluck:""},
+        Sam:{letter:"S",potluck:"Ribs (maybe Mac and Cheese)"},
+        Scott:{letter:"G",potluck:"Better Mac and Cheese"},
+        Tiki:{letter:"A",potluck:"Armenian Food"},
         Zachary:{letter:"K",potluck:""}
     }
 
@@ -341,6 +342,7 @@
     <Formatrules rules={sams}/>
     <Formatrules rules={choice}/>
     <Points/>
+    <Potluck players={players}/>
 </div>
 <style>
     h1 {
