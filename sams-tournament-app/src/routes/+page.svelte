@@ -2,6 +2,7 @@
     import Formatrules from "$lib/components/formatrules.svelte";
     import Potluck from "$lib/components/potluck.svelte";
     import Points from "$lib/components/points.svelte";
+    import Winner from "$lib/components/winner.svelte";
 
     let players = {
         Bruno:{letter:"S",potluck:"Well Done Ribs"},
@@ -327,22 +328,23 @@
 </script>
 
 <div class="w-full h-full bg-gray-900">
-    <h1 class="bg-gray-800 text-gray-200 text-center">Luton Invititational</h1>
-    <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invititational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
-    <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of most recent Standard MTG Set </h2>
+    <h1 class="bg-gray-800 text-gray-200 text-center">Luton Invitational</h1>
+    <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invitational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
+    <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of most recent Standard MTG Set and Potluck dish</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Additional Fees/Requirements may apply depending on Format</h2>
-    <h2 class="bg-gray-600 text-gray-200 text-center">You must bring all decks and required materials or be disqualified, on day of tournament.</h2>
+    <h2 class="bg-gray-600 text-gray-200 text-center">You must bring all decks and required materials or your spot will be given to an alternate, on day of tournament.</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Cards can be borrowed from Sam's Collection at a First Come/First Serve Basis</h2>
     <h2 class="bg-gray-500 text-gray-200 text-center">3 Matches of each Format are played using a pairing system.</h2>
     <h2 class="bg-gray-500 text-gray-200 text-center">Points are awarded based on W/L ratio in each format.</h2>
     <h2 class="bg-gray-500 text-gray-200 text-center">Winner is player with most points from all formats.</h2>
-    <h2 class="bg-gray-500 text-gray-200 text-center">Winner selects 1 format for next year.</h2>
+    <h2 class="bg-gray-500 text-gray-200 text-center">Winner will become the new Defending Champion and selects 1 format for next year.</h2>
     
     <Formatrules rules={letter} players={players}/>
     <Formatrules rules={sams}/>
     <Formatrules rules={choice}/>
     <Points/>
     <Potluck players={players}/>
+    <Winner/>
 </div>
 <style>
     h1 {

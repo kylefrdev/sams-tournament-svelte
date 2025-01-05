@@ -17,7 +17,7 @@
 
 <Collapsible>
     <h1 class="bg-gray-800 text-gray-200" name="header" slot="header">W/L/T Ratio - Points Table</h1>
-    <h2 class="bg-gray-700 text-gray-200" name="header">If there is a tie between first place, sudden death round is played with agreed upon format</h2>
+    <h2 class="bg-gray-700 text-gray-200" name="header">If there is a tie between first place with all formats tallied, sudden death round is played with agreed upon format</h2>
     <table class="table-auto border-collapse border border-gray-500 w-full bg-gray-700" slot="content">
         <thead class="bg-purple-950">
             <tr>
