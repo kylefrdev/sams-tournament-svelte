@@ -4,7 +4,7 @@ const imgURL = new URL("$lib/assets/psychosiscrawler.webp", import.meta.url).hre
 </script>
 
 <!-- <img alt="winner.jpg" src="{imgURL}"> -->
- <img alt="winner.jpg" src="{imgURL}">
+ <img alt="winner.jpg" src="/images/psychosiscrawler.webp">
 
 <style>
     img {
