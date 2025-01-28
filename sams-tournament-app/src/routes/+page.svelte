@@ -329,6 +329,7 @@
 
 <div class="w-full h-full bg-gray-900">
     <h1 class="bg-gray-800 text-gray-200 text-center">Luton Invitational</h1>
+    <h2 class="bg-gray-700 text-gray-200 text-center">Saturday, March 1st, 2025 - 11:00AM</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invitational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">Start Time: 11:00 AM</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of most recent Standard MTG Set and Potluck dish</h2>
