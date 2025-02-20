@@ -7,11 +7,11 @@
     let players = {
         Bruno:{letter:"S",potluck:"Well Done Ribs"},
         Connor:{letter:"F",potluck:""},
-        Dan:{letter:"K",potluck:""},
+        Dan:{letter:"K",potluck:"Macaroni and Potato Salad"},
         Evan:{letter:"C",potluck:"Fried Chicken"},
         Fernando:{letter:"M",potluck:""},
-        Fresh:{letter:"Y",potluck:""},
-        Froggy:{letter:"V",potluck:""},
+        Fresh:{letter:"Y",potluck:"Cheap & EZ"},
+        Froggy:{letter:"V",potluck:"Sodas and Waters"},
         Gabe:{letter:"S",potluck:""},
         Gary:{letter:"S",potluck:""},
         John:{letter:"P",potluck:""},
@@ -20,7 +20,7 @@
         Kyle:{letter:"K",potluck:"Pumpkin Cake"},
         Mark:{letter:"I",potluck:""},
         Sam:{letter:"S",potluck:"Ribs (maybe Mac and Cheese)"},
-        Scott:{letter:"G",potluck:"Better Mac and Cheese"},
+        Scott:{letter:"G",potluck:"35 Cokes"},
         Tiki:{letter:"A",potluck:"Armenian Food"},
         Zachary:{letter:"K",potluck:""}
     }
