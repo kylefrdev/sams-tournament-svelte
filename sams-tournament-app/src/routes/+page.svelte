@@ -22,7 +22,7 @@
         Sam:{letter:"S",potluck:"Ribs & Mac and Cheese"},
         Scott:{letter:"G",potluck:"Coke, Diet Coke, Dr. Pepper, and Popcorn"},
         Tiki:{letter:"A",potluck:"Armenian Food"},
-        Zachary:{letter:"K",potluck:"Cookies or other Baked Cookies"}
+        Zachary:{letter:"K",potluck:"Cookies or other Baked Goods"}
     }
 
     let letter = {
