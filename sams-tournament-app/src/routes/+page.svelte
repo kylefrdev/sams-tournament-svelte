@@ -6,13 +6,13 @@
 
     let players = {
         Bruno:{letter:"S",potluck:""},
-        Connor:{letter:"F",potluck:""},
+        Connor:{letter:"F",potluck:"Ampersand Ice Cream"},
         Dan:{letter:"K",potluck:"Macaroni and Potato Salad"},
         Evan:{letter:"C",potluck:"Fried Chicken"},
         Fernando:{letter:"M",potluck:"Napkins, Plates, and Utensils"},
         Fresh:{letter:"Y",potluck:"Chips and Dip"},
         Froggy:{letter:"V",potluck:"Red Solo Cups"},
-        Gabe:{letter:"S",potluck:""},
+        Gabe:{letter:"S",potluck:"Side Dish"},
         Gary:{letter:"S",potluck:""},
         John:{letter:"P",potluck:""},
         // Jordan:{letter:"C",potluck:""},
