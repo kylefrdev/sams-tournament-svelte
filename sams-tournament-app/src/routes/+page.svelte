@@ -3,26 +3,50 @@
     import Potluck from "$lib/components/potluck.svelte";
     import Points from "$lib/components/points.svelte";
     import Winner from "$lib/components/winner.svelte";
+    import Score from "$lib/components/score.svelte"
 
     let players = {
-        Bruno:{letter:"S",potluck:""},
-        Connor:{letter:"F",potluck:"Ampersand Ice Cream"},
-        Dan:{letter:"K",potluck:"Macaroni and Potato Salad"},
-        Evan:{letter:"C",potluck:"Fried Chicken"},
-        Fernando:{letter:"M",potluck:"Napkins, Plates, and Utensils"},
-        Fresh:{letter:"Y",potluck:"Chips and Dip"},
-        Froggy:{letter:"V",potluck:"Red Solo Cups"},
-        Gabe:{letter:"S",potluck:"Side Dish"},
-        Gary:{letter:"S",potluck:""},
-        John:{letter:"P",potluck:""},
-        // Jordan:{letter:"C",potluck:""},
-        Josh:{letter:"F",potluck:""},
-        Kyle:{letter:"K",potluck:"Pumpkin Cake"},
-        Mark:{letter:"I",potluck:""},
-        Sam:{letter:"S",potluck:"Ribs & Mac and Cheese"},
-        Scott:{letter:"G",potluck:"Coke, Diet Coke, Dr. Pepper, and Popcorn"},
-        Tiki:{letter:"A",potluck:"Armenian Food"},
-        Zachary:{letter:"K",potluck:"Cookies or other Baked Goods"}
+        Bruno:{letter:"S",potluck:"", alternate:true},
+        Connor:{letter:"F",potluck:"", alternate:false},
+        Dan:{letter:"K",potluck:"", alternate:false},
+        Evan:{letter:"C",potluck:"", alternate:false},
+        Fernando:{letter:"M",potluck:"", alternate:false},
+        Fresh:{letter:"Y",potluck:"", alternate:false},
+        Froggy:{letter:"V",potluck:"", alternate:true},
+        Gabe:{letter:"S",potluck:"", alternate:false},
+        Gary:{letter:"S",potluck:"", alternate:false},
+        John:{letter:"P",potluck:"", alternate:false},
+        Josh:{letter:"F",potluck:"", alternate:false},
+        Kyle:{letter:"K",potluck:"", alternate:false},
+        Mark:{letter:"I",potluck:"", alternate:false},
+        Sam:{letter:"S",potluck:"", alternate:false},
+        Scott:{letter:"G",potluck:"", alternate:false},
+        Tiki:{letter:"A",potluck:"", alternate:false},
+        Zachary:{letter:"K",potluck:"", alternate:false}
+    }
+
+    let results = {
+        2025:{
+            formats:["Sam's Choice - Standard", "Letter", "Defender's Choice - Two-Type Modern"],
+            players:{
+                "Scott":[3,5,5],
+                "Sam":[5,3,3],
+                "Tiki":[5,3,3],
+                "Connor":[3,3,3],
+                "Zachary":[3,5,1],
+                "John":[3,3,1],
+                "Evan":[0,1,5],
+                "Fernando":[3,0,3],
+                "Dan":[1,1,3],
+                "Gabe":[1,3,1],
+                "Josh":[1,3,1],
+                "Mark":[3,1,0],
+                "Gary":[1,1,1],
+                "Fresh":[1,1,1],
+                "Kyle":[0,0,3],
+                "Froggy":[1,1,0],
+            }
+        }
     }
 
     let letter = {
@@ -328,7 +352,7 @@
 </script>
 
 <div class="w-full h-full bg-gray-900">
-    <h1 class="bg-gray-800 text-gray-200 text-center">Luton Invitational</h1>
+    <h1 class="bg-gray-800 text-gray-200 text-center">LutonFest</h1>
     <h2 class="bg-gray-700 text-gray-200 text-center">Saturday, March 1st, 2025 - 11:00AM</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invitational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">Start Time: 11:00 AM</h2>
@@ -346,6 +370,7 @@
     <Formatrules rules={choice}/>
     <Points/>
     <Potluck players={players}/>
+    <Score results={results}/>
     <Winner/>
 </div>
 <style>
