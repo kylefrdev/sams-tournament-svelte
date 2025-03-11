@@ -1,362 +1,47 @@
 <script>
-    import Formatrules from "$lib/components/formatrules.svelte";
-    import Potluck from "$lib/components/potluck.svelte";
-    import Points from "$lib/components/points.svelte";
-    import Winner from "$lib/components/winner.svelte";
+    import Formatrules from "$lib/components/formatrules.svelte"
+    import Potluck from "$lib/components/potluck.svelte"
+    import Points from "$lib/components/points.svelte"
+    import Winner from "$lib/components/winner.svelte"
     import Score from "$lib/components/score.svelte"
+    import { onMount } from "svelte";
+    import Tab from "$lib/components/tab.svelte";
+    import Tabs from "$lib/components/tabs.svelte";
+    import { json } from "@sveltejs/kit";
 
-    let players = {
-        Bruno:{letter:"S",potluck:"", alternate:true},
-        Connor:{letter:"F",potluck:"", alternate:false},
-        Dan:{letter:"K",potluck:"", alternate:false},
-        Evan:{letter:"C",potluck:"", alternate:false},
-        Fernando:{letter:"M",potluck:"", alternate:false},
-        Fresh:{letter:"Y",potluck:"", alternate:false},
-        Froggy:{letter:"V",potluck:"", alternate:true},
-        Gabe:{letter:"S",potluck:"", alternate:false},
-        Gary:{letter:"S",potluck:"", alternate:false},
-        John:{letter:"P",potluck:"", alternate:false},
-        Josh:{letter:"F",potluck:"", alternate:false},
-        Kyle:{letter:"K",potluck:"", alternate:false},
-        Mark:{letter:"I",potluck:"", alternate:false},
-        Sam:{letter:"S",potluck:"", alternate:false},
-        Scott:{letter:"G",potluck:"", alternate:false},
-        Tiki:{letter:"A",potluck:"", alternate:false},
-        Zachary:{letter:"K",potluck:"", alternate:false}
+    const lutonFestFiles = import.meta.glob('$lib/tournaments/lutonfest/*.json')
+    let lutonFestData = []
+    let activeTab = 1
+
+    function setActiveTab(index) {
+        console.log("active tab", index)
+        activeTab = index;
     }
 
-    let results = {
-        2025:{
-            formats:["Sam's Choice - Standard", "Letter", "Defender's Choice - Two-Type Modern"],
-            players:{
-                "Scott":[3,5,5],
-                "Sam":[5,3,3],
-                "Tiki":[5,3,3],
-                "Connor":[3,3,3],
-                "Zachary":[3,5,1],
-                "John":[3,3,1],
-                "Evan":[0,1,5],
-                "Fernando":[3,0,3],
-                "Dan":[1,1,3],
-                "Gabe":[1,3,1],
-                "Josh":[1,3,1],
-                "Mark":[3,1,0],
-                "Gary":[1,1,1],
-                "Fresh":[1,1,1],
-                "Kyle":[0,0,3],
-                "Froggy":[1,1,0],
-            }
-        }
+    async function loadData(){
+        // Collect all promises
+        const promises = Object.entries(lutonFestFiles).map(([path, resolver]) =>
+        resolver().then((module) => {
+            return module.default; // Return the JSON data
+        })
+        );
+
+        // Wait for all promises to resolve
+        lutonFestData = await Promise.all(promises);
     }
 
-    let letter = {
-        formatTitle: "Letter",
-        format: 'Letter',
-        base: 'Vintage',
-        min: 60,
-        max: null,
-        copies: 4,
-        formatRules: [
-            "All cards must be Vintage Legal",
-            "Letters are chosen randomly by die (d100) roll by impartial party (Mike)",
-            "All cards must start with chosen letter, basic lands ignore this rule",
-            "Cards starting with the word (The) followed by a word are also allowed. example: Chosen letter of (R) can use The Rack in their deck",
-            "Deck can only contain 4 cards with goblin creature type total, regardless of letter; example: (4 Krenko, Mob Boss in a K deck)",
-            '"Color Hosers" that permenantly inhibit one or more colors from being played, Ex  Deathmark (ok), Boil (Banned)'
-        ],
-        samsBans:[
-            "Stoneforge Mystic",
-            "Timevault"
-        ],
-        bans: [
-            "Adriana's Valor",
-            "Advantageous Proclamation",
-            "Aerialephant",
-            "Ambassador Blorpityblorpboop",
-            "Amulet of Quoz",
-            "Assemble the Rank and Vile",
-            "Backup Plan",
-            "Baaallerina",
-            "_____ Balls of Fire",
-            "Bioluminary",
-            "_____ Bird Gets the Worm",
-            "Brago's Favor",
-            "Bronze Tablet",
-            "Carnival Carnivore",
-            "Chaos Orb",
-            "Chicken Troupe",
-            "Clandestine Chameleon",
-            "Cleanse",
-            "Coming Attraction",
-            "Command Performance",
-            "Contract from Below",
-            "Crusade",
-            "Darkpact",
-            "Deadbeat Attendant",
-            "Dee Kay, Finder of the Lost",
-            "Discourtesy Clerk",,
-            "Demonic Attorney",
-            "Double Stroke",
-            "Done for the Day",
-            "Draconian Gate-Bot",
-            "Echoing Boon",
-            "Emissary's Ploy",
-            "Falling Start",
-            "Fight the _____ Fight",
-            "Finishing Move",
-            "Glitterflitter",
-            "_____ Goblin",
-            "Hired Heist",
-            "Hold the Perimeter",
-            "Hymn of the Wilds",
-            "Immediate Action",
-            "Imprison",
-            "Incendiary Dissent",
-            "Invoke Prejudice",
-            "Iterative Analysis",,
-            "Jeweled Bird",
-            "Jihad",
-            "Last Voyage of the _____",
-            '"Lifetime" Pass Holder',
-            "Line Cutter",
-            "Lineprancers",
-            "Marchesa's Surprise Party",
-            "Make a _____ Splash",
-            "Minotaur de Force",
-            "Monitor Monitor",
-            "Muzzio's Preparations",
-            "Myra the Magnificent",
-            "Natural Unity",
-            "_____-o-saurus",
-            "Park Bleater",
-            "Petting Zookeeper",
-            "Pin Collection",
-            "Power Play",
-            "Pradesh Gypsies",
-            "Prize Wall",
-            "Proficient Pyrodancer",
-            "Psychic Frog",
-            "Rebirth",
-            "Robo-Piñata",
-            "_____ _____ Rocketship",
-            "Roxi, Publicist to the Stars",
-            "Rule with an Even Hand",
-            "Quick Fixer",
-            "Rad Rascal",
-            "Ride Guide",
-            "Scampire",
-            "Seasoned Buttoneer",
-            "Secret Summoning",
-            "Secrets of Paradise",
-            "Shahrazad",
-            "Soul Swindler",
-            "Sovereign's Realm",
-            "Spinnerette, Arachnobat",
-            "Squirrel Squatters",
-            "Step Right Up",
-            "Stiltstrider",
-            "Stone-Throwing Devils",
-            "Summoner's Bond",
-            "Sword-Swallowing Seraph",
-            "Tempest Efreet",
-            "Timmerian Fiends",
-            "Ticketomaton",
-            "_____ _____ _____ Trespasser",
-            "The Most Dangerous Gamer",
-            "Tusk and Whiskers",
-            "Unexpected Potential",
-            "Vexing Bauble",
-            "Weight Advantage",
-            "Wicker Picker",
-            "Wizards of the _____",
-            "Wolf in _____ Clothing",
-            "Worldknit"
-        ],
-        restricted: [
-            "Ancestral Recall",
-            "Balance",
-            "Black Lotus",
-            "Brainstorm",
-            "Chalice of the Void",
-            "Channel",
-            "Demonic Consultation",
-            "Demonic Tutor",
-            "Dig Through Time",
-            "Flash",
-            "Gitaxian Probe",
-            "Golgari Grave-Troll",
-            "Gush",
-            "Imperial Seal",
-            "Karn, the Great Creator",
-            "Library of Alexandria",
-            "Lion's Eye Diamond",
-            "Lodestone Golem",
-            "Lotus Petal",
-            "Mana Crypt",
-            "Mana Vault",
-            "Memory Jar",
-            "Mental Misstep",
-            "Merchant Scroll",
-            "Mind's Desire",
-            "Monastery Mentor",
-            "Mox Emerald",
-            "Mox Jet",
-            "Mox Pearl",
-            "Mox Ruby",
-            "Mox Sapphire",
-            "Mystic Forge",
-            "Mystical Tutor",
-            "Narset, Parter of Veils",
-            "Necropotence",
-            "Sol Ring",
-            "Strip Mine",
-            "Thorn of Amethyst",
-            "Time Vault",
-            "Time Walk",
-            "Timetwister",
-            "Tinker",
-            "Tolarian Academy",
-            "Treasure Cruise",
-            "Trinisphere",
-            "Urza's Saga",
-            "Vampiric Tutor",
-            "Vexing Bauble",
-            "Wheel of Fortune",
-            "Windfall",
-            "Yawgmoth's Will",
-        ],
-        clarifications: [
-            "Using a 60 card deck as an example, you can have 56 cards without and 4 cards with goblin type.",
-            "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type."
-        ],
-        odds:{
-            'A':{faces:[1,5]},
-            'B':{faces:[6,10]},
-            'C':{faces:[11,15]},
-            'D':{faces:[16,20]},
-            'E':{faces:[21,25]},
-            'F':{faces:[26,30]},
-            'G':{faces:[31,35]},
-            'H':{faces:[36,40]},
-            'I':{faces:[41,41]},
-            'J':{faces:[42,42]},
-            'K':{faces:[43,46]},
-            'L':{faces:[47,51]},
-            'M':{faces:[52,56]},
-            'N':{faces:[57,60]},
-            'O':{faces:[61,64]},
-            'P':{faces:[65,69]},
-            'Q':{faces:[70,70]},
-            'R':{faces:[71,75]},
-            'S':{faces:[76,80]},
-            'T':{faces:[81,85]},
-            'U':{faces:[86,86]},
-            'V':{faces:[87,91]},
-            'W':{faces:[92,96]},
-            'X':{faces:[97,97]},
-            'Y':{faces:[98,99]},
-            'Z':{faces:[100,100]}
-        }
-    }
-
-    let sams = {
-        formatTitle: "Sam's Choice",
-        format: "Standard",
-        base: 'Standard',
-        min: 60,
-        max: null,
-        copies: 4,
-        formatRules: [
-            "All cards must be Standard Legal",
-        ],
-        samsBans:[],
-        bans: [],
-        restricted: [],
-        clarifications: [],
-    }
-
-    let choice = {
-        formatTitle: "Defending Champions's Choice",
-        format: "Two-Type Modern",
-        base: 'Modern',
-        min: 60,
-        max: null,
-        copies: 4,
-        formatRules: [
-            "All cards must be Modern Legal",
-            "Choose two Card types from this list; Artifact, Battle, Creature, Enchantment, Instant, Kindred, Nonbasic Land, Planeswalker, Sorcery, Tribal",
-            'A deck can only consist of cards containing these and only these types in their "type line", Basic Lands Ignore this rule',
-        ],
-        samsBans:[],
-        bans: [
-            "Amped Raptor",
-            "Ancient Den",
-            "Arcum's Astrolabe",
-            "Birthing Pod",
-            "Blazing Shoal",
-            "Bridge From Below",
-            "Chrome Mox",
-            "Cloudpost",
-            "Dark Depths",
-            "Deathrite Shaman",
-            "Dig Through Time",
-            "Dread Return",
-            "Eye of Ugin",
-            "Field of the Dead",
-            "Fury",
-            "Gitaxian Probe",
-            "Glimpse of Nature",
-            "Golgari Grave-Troll",
-            "Great Furnace",
-            "Grief",
-            "Hogaak, Arisen Necropolis",
-            "Hypergenesis",
-            "Jegantha, the Wellspring",
-            "Krark-Clan Ironworks",
-            "Lurrus of the Dream-Den",
-            "Mental Misstep",
-            "Mycosynth Lattice",
-            "Mystic Sanctuary",
-            "Nadu, Winged Wisdom",
-            "Oko, Thief of Crowns",
-            "Once Upon a Time",
-            "Ponder",
-            "Punishing Fire",
-            "Rite of Flame",
-            "Seat of the Synod",
-            "Second Sunrise",
-            "Seething Song",
-            "Sensei's Divining Top",
-            "Simian Spirit Guide",
-            "Skullclamp",
-            "Summer Bloom",
-            "The One Ring",
-            "Tibalt's Trickery",
-            "Treasure Cruise",
-            "Tree of Tales",
-            "Umezawa's Jitte",
-            "Up the Beanstalk",
-            "Uro, Titan of Nature's Wrath",
-            "Vault of Whispers",
-            "Violent Outburst",
-            "Yorion, Sky Nomad"
-        ],
-        restricted: [],
-        clarifications: [
-            "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type.",
-            "A card can have one or both of the types but cannot have another type not chosen, example Artifact/Planeswalker cannot have the card Simulacrum, which is an Artifact Creature, in their deck.",
-            "Split Cards/Flip Cards or any single card with multiple sides must follow these rules as well on every side. Using a previous example,  cannot be used even though one side is an Artifact the other is a Creature and the chosen types were Artifact/Planeswalker",
-            "Meld Cards although having a part of a card on one side does not count against that rule, So Urza, Lord Protector and The Mightstone and MeakStone can be used in an Artifact/Creature deck despite the melded card being a planeswalker"
-        ],
-    }
+    onMount(async ()=>{
+        await loadData()
+        let activeTab = lutonFestData.length -1
+    })
 </script>
 
 <div class="w-full h-full bg-gray-900">
     <h1 class="bg-gray-800 text-gray-200 text-center">LutonFest</h1>
-    <h2 class="bg-gray-700 text-gray-200 text-center">Saturday, March 1st, 2025 - 11:00AM</h2>
+    <h2 class="bg-gray-700 text-gray-200 text-center">TBD 2026</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invitational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">Start Time: 11:00 AM</h2>
-    <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of any MTG Set and Potluck dish</h2>
+    <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of any MTG Set and a Potluck dish</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Additional Fees/Requirements may apply depending on Format</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">You must bring all decks and required materials or your spot will be given to an alternate, on day of tournament.</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Cards can be borrowed from Sam's Collection at a First Come/First Serve Basis</h2>
@@ -364,14 +49,30 @@
     <h2 class="bg-gray-500 text-gray-200 text-center">Points are awarded based on W/L ratio in each format.</h2>
     <h2 class="bg-gray-500 text-gray-200 text-center">Winner is player with most points from all formats.</h2>
     <h2 class="bg-gray-500 text-gray-200 text-center">Winner will become the new Defending Champion and selects 1 format for next year.</h2>
-    
-    <Formatrules rules={letter} players={players}/>
-    <Formatrules rules={sams}/>
-    <Formatrules rules={choice}/>
     <Points/>
-    <Potluck players={players}/>
-    <Score results={results}/>
-    <Winner/>
+    <Tabs>
+        <div slot="tab-titles" class="bg-gray-800">
+            {#each lutonFestData as item, index}
+                <Tab title={`LutonFest ${item.year}`} {activeTab} index={index} setActiveTab={()=>{
+                    setActiveTab(index)
+                }}/>
+            {/each}
+        </div>
+
+        <div slot="tab-content">
+            {#each lutonFestData as item, index}
+                {#if index === activeTab}
+                    {#each Object.keys(item.formats) as format}
+                        <Formatrules rules={item.formats[format]} players={item.players} />
+                    {/each}
+                    <Score players={item.players} formats={item.formats} />
+                    <Potluck players={item.players} />
+                    <Winner/>
+                {/if}
+            {/each}
+        </div>
+    </Tabs>
+
 </div>
 <style>
     h1 {
