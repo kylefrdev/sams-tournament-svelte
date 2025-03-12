@@ -16,7 +16,7 @@
                 <h2 class="bg-gray-800 text-gray-200">Base Rules</h2>
                 <h2 class="bg-gray-800 text-gray-200">Copies per Card</h2>
                 <h3 class="bg-gray-700 text-gray-200 text-2xl">{rules.base_rules}</h3>
-                <h3 class="bg-gray-700 text-gray-200 text-2xl">{rules.copies}</h3>
+                <h3 class="bg-gray-700 text-gray-200 text-2xl">{rules.copies ?? "\u221E"}</h3>
             </div>
             <h2 class="bg-gray-800 text-gray-200">Deck Size Limits</h2>
             <div class="grid grid-cols-2">

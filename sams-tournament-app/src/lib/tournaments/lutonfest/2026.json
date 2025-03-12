@@ -29,9 +29,9 @@
             "title": "Sam's Choice",
             "format": "Ass Rare Draft",
             "base_rules": "Vintage",
-            "min": 60,
+            "min": 40,
             "max": null,
-            "copies": 4,
+            "copies": null,
             "rules": [
                 "All cards must be Vintage Legal",
                 "Each Player must bring 3 packs of 15 Rare/Mythic Rare cards",
