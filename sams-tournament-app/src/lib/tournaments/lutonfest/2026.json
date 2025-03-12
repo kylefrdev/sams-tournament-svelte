@@ -28,12 +28,11 @@
             "order":1,
             "title": "Sam's Choice",
             "format": "Ass Rare Draft",
-            "base_rules": "Vintage",
+            "base_rules": "Draft",
             "min": 40,
             "max": null,
             "copies": null,
             "rules": [
-                "All cards must be Vintage Legal",
                 "Each Player must bring 3 packs of 15 Rare/Mythic Rare cards",
                 "Pack Composition: 2 Black, 2 White, 2 Green, 2 Blue, 2 Red, 2 Multicolored, 1 Colorless (Non-land), 1 Land, 1 Random Foil Rare/Mythic",
                 "Card Type does not matter only color, except where explicitly stated",
