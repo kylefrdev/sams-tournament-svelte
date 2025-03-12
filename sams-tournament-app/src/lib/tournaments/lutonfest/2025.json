@@ -1,6 +1,7 @@
 {
     "year":2025,
     "date":"03/01/2025",
+    "photo":"LutonFest2025.jpeg",
     "players":{
         "Bruno":{"name":"Bruno", "letter":"S","potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
         "Connor":{"name":"Connor", "letter":"F","potluck":"Ampersand Ice Cream", "alternate":false, "attended":true, "results":[3,3,3], "place":4},

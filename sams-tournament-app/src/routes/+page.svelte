@@ -2,12 +2,12 @@
     import Formatrules from "$lib/components/formatrules.svelte"
     import Potluck from "$lib/components/potluck.svelte"
     import Points from "$lib/components/points.svelte"
-    import Winner from "$lib/components/winner.svelte"
     import Score from "$lib/components/score.svelte"
     import { onMount } from "svelte";
     import Tab from "$lib/components/tab.svelte";
     import Tabs from "$lib/components/tabs.svelte";
     import { json } from "@sveltejs/kit";
+    import GroupPhoto from "$lib/components/groupphoto.svelte";
 
     const lutonFestFiles = import.meta.glob('$lib/tournaments/lutonfest/*.json')
     let lutonFestData = []
@@ -67,7 +67,7 @@
                     {/each}
                     <Score players={item.players} formats={item.formats} />
                     <Potluck players={item.players} />
-                    <Winner/>
+                    <GroupPhoto photo={item.photo}/>
                 {/if}
             {/each}
         </div>
