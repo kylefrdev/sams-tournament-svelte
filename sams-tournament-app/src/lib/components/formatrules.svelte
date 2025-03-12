@@ -4,6 +4,15 @@
     import Collapsible from "./collapsible.svelte";
     export let rules
     export let players
+
+    function isValidLink(str) {
+        try {
+            new URL(str)
+            return true
+        } catch (e) {
+            return false
+        }
+    }
 </script>
 
 {#if rules}
@@ -27,7 +36,11 @@
             </div>
             <h1 class="bg-gray-800 text-gray-200">Format Rules</h1>
             {#each rules.rules as rule}
-                <p class="bg-gray-700 text-gray-200 border-b border-gray-800">{rule}</p>
+                {#if isValidLink(rule)}
+                    <a class ="text-purple-500 border-b border-gray-800" href={rule} target="_blank" rel="noopener noreferrer">{rule}</a>
+                {:else}
+                    <p class="bg-gray-700 text-gray-200 border-b border-gray-800">{rule}</p>
+                {/if}
             {/each}
             <h1 class="bg-gray-800 text-gray-200">Rules Clarifications</h1>
             {#each rules.clarifications as clarification}
@@ -55,5 +68,11 @@
 
     p {
         text-align: center;
+    }
+
+    a {
+        display:block;
+        text-align: center;
+        width:100%;
     }
 </style>

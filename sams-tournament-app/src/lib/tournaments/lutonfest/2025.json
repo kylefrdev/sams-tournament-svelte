@@ -51,7 +51,8 @@
                 "All cards must start with chosen letter, basic lands ignore this rule",
                 "Cards starting with the word (The) followed by a word are also allowed. example: Chosen letter of (R) can use The Rack in their deck",
                 "Deck can only contain 4 cards with goblin creature type total, regardless of letter; example: (4 Krenko, Mob Boss in a K deck)",
-                "\"Color Hosers\" that permenantly inhibit one or more colors from being played, Ex  Deathmark (ok), Boil (Banned)"
+                "https://www.smileylich.com/mtg/magocracy/visual/Color_Hosers_visual.html",
+                "If any cards are found on the link provided that wish to be used ask Sam directly"
             ],
             "sams_bans":[
                 "Stoneforge Mystic",
