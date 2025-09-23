@@ -266,7 +266,7 @@
         },
         "defending_choice":{
             "order":3,
-            "title": "Scott's Choice",
+            "title": "Defending Champ: Scott's Choice",
             "format": "Premodern",
             "base_rules": "Premodern",
             "min": 60,
