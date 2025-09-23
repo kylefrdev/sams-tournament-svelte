@@ -19,7 +19,6 @@
         padding-right:5px;
         padding-left: 5px;
         flex: 1;         /* Make each button grow equally */
-        width: 100%;     /* Optional: ensures full space inside the flex item */
         /* padding: 10px;   Style as needed */
         text-align: center;
         box-sizing: border-box;
