@@ -251,7 +251,7 @@
         },
         "defending_choice":{
             "order":3,
-            "title": "Defending Champions's Choice",
+            "title": "Defending Champions: Tiki's Choice",
             "format": "Two-Type Modern",
             "base_rules": "Modern",
             "min": 60,
