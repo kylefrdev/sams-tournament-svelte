@@ -38,7 +38,7 @@
 
 <div class="w-full h-full bg-gray-900">
     <h1 class="bg-gray-800 text-gray-200 text-center">LutonFest</h1>
-    <h2 class="bg-gray-700 text-gray-200 text-center">Saturday, March 21st 2026 (Tentative)</h2>
+    <h2 class="bg-gray-700 text-gray-200 text-center">Saturday, March 21st 2026</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">3 Format Invitational - Sam's Choice, Defending Champion's Choice, and Letter</h2>
     <h2 class="bg-gray-700 text-gray-200 text-center">Start Time: 11:00 AM</h2>
     <h2 class="bg-gray-600 text-gray-200 text-center">Entry: $10 or 3 packs of any MTG Set and a Potluck dish</h2>
