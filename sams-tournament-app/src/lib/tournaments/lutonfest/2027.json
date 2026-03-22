@@ -1,7 +1,7 @@
 {
     "year":2027,
     "date":"TBD 22027",
-    "photo":"LutonFest2027.jpg",
+    "photo":"LutonFest2027.png",
     "players":{
         "Bruno":{"name":"Bruno", "letter":"S","potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
         "Chris":{"name":"Chris", "letter":"S","potluck":"", "alternate":true, "attended":false, "results":[], "place":0},

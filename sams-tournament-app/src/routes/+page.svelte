@@ -11,7 +11,7 @@
 
     const lutonFestFiles = import.meta.glob('$lib/tournaments/lutonfest/*.json')
     let lutonFestData = []
-    let activeTab = 1
+    let activeTab = 2
 
     function setActiveTab(index) {
         console.log("active tab", index)
