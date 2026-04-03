@@ -1,53 +1,45 @@
 {
-    "year":2026,
-    "date":"03/21/2026",
-    "photo":"LutonFest2026.jpg",
+    "year":2016,
+    "date":"10/8/2016",
+    "photo":"psychosiscrawler.webp",
     "players":{
-        "Bruno":{"name":"Bruno", "letter":"P","potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
-        "Chris":{"name":"Chris", "letter":"S","potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
-        "Connor":{"name":"Connor", "letter":"C","potluck":"", "alternate":false, "attended":false, "results":[5,3,3], "place":1},
-        "Dan":{"name":"Dan", "letter":"C","potluck":"", "alternate":false, "attended":false, "results":[3,1,5], "place":6},
-        "Evan":{"name":"Evan", "letter":"T","potluck":"", "alternate":false, "attended":false, "results":[3,0,0], "place":17},
-        "Fernando":{"name":"Fernando", "letter":"S","potluck":"", "alternate":false, "attended":false, "results":[1,0,3], "place":14},
-        "Fresh":{"name":"Fresh", "letter":"V","potluck":"", "alternate":false, "attended":false, "results":[1,1,1], "place":17},
-        "Froggy":{"name":"Froggy", "letter":"E","potluck":"", "alternate":false, "attended":false, "results":[0,3,0], "place":17},
-        "Gabe":{"name":"Gabe", "letter":"X","potluck":"", "alternate":false, "attended":false, "results":[3,1,3], "place":10},
-        "Gary":{"name":"Gary", "letter":"H","potluck":"", "alternate":false, "attended":false, "results":[1,0,1], "place":18},
-        "John":{"name":"John", "letter":"S","potluck":"", "alternate":false, "attended":false, "results":[1,5,3], "place":6},
-        "Josh":{"name":"Josh", "letter":"K","potluck":"", "alternate":false, "attended":false, "results":[3,3,1], "place":10},
-        "Kyle":{"name":"Kyle", "letter":"P","potluck":"", "alternate":false, "attended":false, "results":[3,3,1], "place":10},
-        "Mark":{"name":"Mark", "letter":"A","potluck":"", "alternate":false, "attended":false, "results":[0,1,3], "place":14},
-        "Neil":{"name":"Neil", "letter":"T","potluck":"", "alternate":true, "attended":false, "results":[3,5,1], "place":6},
-        "Rupan":{"name":"Rupan", "letter":"S","potluck":"", "alternate":true, "attended":false, "results":[3,3,5], "place":2},
-        "Sam":{"name":"Sam", "letter":"B","potluck":"", "alternate":false, "attended":false, "results":[3,1,1], "place":12},
-        "Scott":{"name":"Scott", "letter":"D","potluck":"", "alternate":false, "attended":false, "results":[5,1,3], "place":6},
-        "Tiki":{"name":"Tiki", "letter":"H","potluck":"", "alternate":false, "attended":false, "results":[1,1,5], "place":10},
-        "Zachary":{"name":"Zachary", "letter":"L","potluck":"", "alternate":false, "attended":false, "results":[1,5,3], "place":6}
+        "Connor":{"name":"Connor", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Dan":{"name":"Dan", "letter":"", "potluck":"", "alternate":false, "attended":false, "results":[], "place":0},
+        "Derek":{"name":"Derek", "letter":"", "potluck":"", "alternate":false, "attended":false, "results":[], "place":0},
+        "Evan":{"name":"Evan", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Fernando":{"name":"Fernando", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Fresh":{"name":"Fresh", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Gary":{"name":"Gary", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "John":{"name":"John", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Josh":{"name":"Josh", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Mark":{"name":"Mark", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Sam":{"name":"Sam", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Scott":{"name":"Scott", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Terry":{"name":"Terry", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Tikijian":{"name":"Tikijian", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0},
+        "Zachary":{"name":"Zachary", "letter":"", "potluck":"", "alternate":true, "attended":false, "results":[], "place":0}
     },
     "formats":{
         "sams_choice":{
             "order":1,
-            "title": "Sam's Choice",
-            "format": "Ass Rare Draft",
-            "base_rules": "Draft",
-            "min": 40,
+            "title": "Sam's Choice - Random Block Constructed",
+            "format": "Vintage",
+            "base_rules": "Vintage",
+            "min": 60,
             "max": null,
-            "copies": null,
+            "copies": 4,
             "rules": [
-                "Each Player must bring 3 packs of 15 Rare/Mythic Rare cards",
-                "Pack Composition: 2 Black, 2 White, 2 Green, 2 Blue, 2 Red, 2 Multicolored, 1 Colorless (Non-land), 1 Land, 1 Random Foil Rare/Mythic",
-                "Card Type does not matter only color, except where explicitly stated",
-                "Rare Draft (Rares are kept by the drafters, you will not get them back)",
-                "Cards can be duplicates",
-                "Unsets are banned, even cards that are technically legal in the format"
+                "All Cards must be Vintage legal",
+                "Roll percentile dice to randomly determine which set from which you may use to construct your deck",
+                "You will roll one lare set and two small sets",
+                "You are not required to use cards from all three Blocks"
             ],
             "sams_bans":[],
             "bans": [],
             "restricted": [],
             "clarifications": [
-                "U1/U2 Rarities do not count, they must be Rares",
-                "Rare/Mythic Status is determined at time of Printing, but the rare version must be used. I/E Sengir Vampire originally printed as uncommon, but rare in Torment. You can use Torment Version (Rare) but not Revised (Uncommon)",
-                "Pod Organization has not yet been determined. either 2 Pods of 8 or 1 pod of 16"
+                "You can use reprints",
+                "You can choose to not use one block entirely but the other cards must be made of a balance of the other two."
             ]
         },
         "letter":{
@@ -63,8 +55,6 @@
                 "Letters are chosen randomly by die (d100) roll by impartial party (Mike)",
                 "All cards must start with chosen letter, basic lands ignore this rule",
                 "Cards starting with the word (The) followed by a word are also allowed. example: Chosen letter of (R) can use The Rack in their deck",
-                "Two Sided cards only 1 side has to follow the First letter rule, either side",
-                "Hybrid cards only 1 half needs to follow First letter rule, either half",
                 "Deck can only contain 4 cards with goblin creature type total, regardless of letter; example: (4 Krenko, Mob Boss in a K deck)",
                 "https://www.smileylich.com/mtg/magocracy/visual/Color_Hosers_visual.html",
                 "If any cards are found on the link provided that wish to be used ask Sam directly"
@@ -231,7 +221,6 @@
                 "Yawgmoth's Will"
             ],
             "clarifications": [
-                "For \"The ___\" T can use them as well even if the second word does not start with T, I/E T can use The Rack",
                 "Using a 60 card deck as an example, you can have 56 cards without and 4 cards with goblin type.",
                 "305.8. Any land with the supertype “basic” is a basic land. Any land that doesn’t have this supertype is a nonbasic land, even if it has a basic land type."
             ],
@@ -266,56 +255,19 @@
         },
         "defending_choice":{
             "order":3,
-            "title": "Defending Champ: Scott's Choice",
-            "format": "Premodern",
-            "base_rules": "Premodern",
-            "min": 60,
+            "title": "Defending Champ: Vintage Cube Draft",
+            "format": "Vintage",
+            "base_rules": "Vintage",
+            "min": 40,
             "max": null,
-            "copies": 4,
+            "copies": null,
             "rules": [
-                "https://www.premodernmagic.com/"
+                "Draft from packs made form Vintage Cube provided by Tikijian"
             ],
             "sams_bans":[],
-            "bans": [
-                "Amulet of Quoz",
-                "Balance",
-                "Brainstorm",
-                "Bronze Tablet",
-                "Channel",
-                "Demonic Consultation",
-                "Earthcraft",
-                "Entomb",
-                "Flash",
-                "Force of Will",
-                "Goblin Recruiter",
-                "Grim Monolith",
-                "Jeweled Bird",
-                "Land-Tax",
-                "Mana Vault",
-                "Memory Jar",
-                "Mind Twist",
-                "Mind's Desire",
-                "Mystical Tutor",
-                "Necropotence",
-                "Rebirth",
-                "Strip Mine",
-                "Tempest Efreet",
-                "Tendrils of Agony",
-                "Time Spiral",
-                "Timmerian Fiends",
-                "Tolarian Academy",
-                "Vampiric Tutor",
-                "Windfall",
-                "Yawgmoth's Bargain",
-                "Yawgmoth's Will"
-            ],
+            "bans": [],
             "restricted": [],
             "clarifications": [
-                "All tournament Legal pre and reprints from legal sets are legal",
-                "Legal Sets: 4th-7th Edition, Ice Age, Chronicles, Homelands, Alliances",
-                "Mirage, Visions, Weatherlight, Tempest, Stronghold, Exodus, Urza's Saga",
-                "Urza's Legacy, 'Urza's Destiny, Mercadian Masques, Nemesis, Prophecy, Invasion",
-                "Planeshift, Apocalypse, Odyssey, Torment, Judgement, Onslaught, Legions, Scourge"
             ]
         }
     }
